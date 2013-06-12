@@ -1,0 +1,194 @@
+/* Reset
+------------------------------------------------------------ */
+* { margin: 0; padding: 0; } html { overflow-y: scroll;} body { background:#ffffff; font-size: 13px; color: #666666; font-family: Arial, helvetica, sans-serif;} ol, ul { list-style: none; margin: 0;} ul li { margin: 0; padding: 0;} h1 { margin-bottom: 10px; color: #111111;} a, img { outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;} p { margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;} img { display: block; margin-bottom: 10px;} aside { font-style: italic; font-size: 0.9em;} article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }
+
+/* Structure */
+header, section, footer{
+	float: left;
+	width:100%;
+}
+
+header{
+	min-height: 400px;
+	background:#c0c0c0;
+}
+
+footer{
+	background:#c0c0c0;
+}
+
+.wrapper{
+	width: 96%;	
+	max-width: 990px;
+	margin: auto;
+	position:relative;
+} 
+
+#line1Top{
+	float: left;
+	width:100%;
+	min-height: 120px;
+}
+
+
+#mainMaxContent{
+	width: 100%;
+	float: right;
+	margin: 20px 0 20px 0;
+	background:#069;
+}		
+
+#mainContent{
+	width: 72.72%;
+	float: right;
+	margin: 0 0 20px 0;
+	background:#f12;
+	clear:both;
+	min-height:284px;
+}		
+
+#sidebar{
+	margin: 0 0 20px 0;
+	float: left;
+	background: #f40;
+	width: 25%;
+}
+
+
+
+
+
+/* Logo H1 */
+header #logoTopo {
+	height: 70px;
+	width: 160px;
+	float: left;
+	display: block;
+	background: url(../images/demo.gif) 0 0 no-repeat;
+	text-indent: -9999px;
+	margin: 10px 0;
+}
+		
+/* Nav */
+header #menuTopo {
+	float: right;
+	margin-top: 40px; 
+	}
+	
+	header #menuTopo li {
+		display: inline;
+		margin-left: 15px;
+		}
+
+
+/*	translate topo	*/
+#translateTopo{
+	float: right;
+	margin: 0;
+	position: absolute;
+	top:10px;
+	right:0px;
+}
+
+#translateTopo a{
+	float: left;
+	width:20px;
+	height:15px;
+	background:#ccc;
+	border: 1px solid #000;
+	margin-left:10px;
+}
+
+
+/* Banner (only the structure.) */
+#bannerTopo {
+	float: left;
+	margin-bottom: 15px;
+	width: 100%;
+	height: 300px;
+	background:#CCC;
+	border: 1px solid #000;
+}
+
+
+
+
+/* footer */
+footer .wrapper{
+	min-height: 300px;
+	
+}
+
+footer .wrapper #contenFooter{
+	float: left;
+	width:100%;
+	min-height:300px;
+	background:#f90;
+	border:1px solid #000;
+}
+
+.boxFooter{
+	width:22%;
+	float:left;
+	margin: 2% 0 0 2.4%;
+	height: 60%;
+	background:#069;
+}
+
+
+
+/* Media Queries */
+@media screen and (max-width: 680px) {
+	
+	header #menuTopo{
+		float: left;
+		clear: left;
+		margin: 0 0 10px; 
+		width: 100%;
+	}	
+	header #menuTopo li {
+		margin: 0;
+		background: #efefef;
+		display: block;
+		margin-bottom: 3px;
+	}
+	header #menuTopo a {
+		display: block;
+		padding: 10px;
+		text-align: center;
+	}			
+
+/*	sidebar   */
+	#sidebar,#mainContent{
+		width:100%;
+	}
+
+/*	footer	*/
+	.boxFooter{
+		width:45%;
+		margin: 3% 0 3% 3%;
+	}
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+	/*	footer	*/
+	.boxFooter{
+		width:89%;
+		margin: 3% 0 0 6%;
+		clear:both;
+	}
+
+}
+
+
+
+.clear{
+	float:left;
+	width: 100%;
+	height:1px;
+	clear:both;
+}
