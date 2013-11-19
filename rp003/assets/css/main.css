@@ -59,4 +59,78 @@ footer{
 	width: 25%;
 }
 
- 
+footer .wrapper{
+	min-height: 300px;
+	
+}
+
+footer .wrapper #contenFooter{
+	float: left;
+	width:100%;
+	min-height:300px;
+	background:#f90;
+	border:1px solid #000;
+}
+
+.boxFooter{
+	width:22%;
+	float:left;
+	margin: 2% 0 0 2.4%;
+	height: 60%;
+	background:#069;
+}
+
+
+
+/*complementos*/
+
+
+/* Logo H1 */
+header #logoTopo {
+	height: 70px;
+	width: 160px;
+	float: left;
+	display: block;
+	background: url(../images/demo.gif) 0 0 no-repeat;
+	text-indent: -9999px;
+	margin: 10px 0;
+}
+		
+/* Nav */
+header #menuTopo {
+	float: right;
+	margin-top: 40px; 
+}
+	
+header #menuTopo li {
+	display: inline;
+	margin-left: 15px;
+}
+
+/*.......... icons rede sociais ..........*/
+#RedesSociaisTopo{
+	float: left;
+}
+#RedesSociaisTopo a{
+	float: left;
+	background: url(../img/iconsRedesSociais.png) no-repeat;
+	width: 20px;
+	height: 20px;
+	margin: 0 0 0 5px;
+}
+#facebook{
+	background-position: 0px 0px;
+}
+#googleplus{
+	background-position: 0px 0px;
+}
+#twitter{
+	background-position: 0px 0px;
+}
+#youtube{
+	background-position: 0px 0px;
+}
+#slideshared{
+	background-position: 0px 0px;
+}
+/*.......... icons rede sociais ..........*/
