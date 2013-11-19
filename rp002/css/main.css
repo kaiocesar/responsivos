@@ -88,7 +88,7 @@ body {
     background: #f16529;
 }
 
-.title {
+.logoTop {
     color: white;
 }
 
@@ -149,7 +149,7 @@ nav a:hover {
     ALL: IE Fixes
    =============== */
 
-.ie7 .title {
+.ie7 .logoTop {
     padding-top: 20px;
 }
 
@@ -215,19 +215,17 @@ nav a:hover {
 /* ====================
     WIDE: CSS3 Effects
    ==================== */
-
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
+.header-container,.main aside {
+        /*-webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;*/
     }
 
 /* ============
     WIDE: Menu
    ============ */
 
-    .title {
+    .logoTop {
         float: left;
     }
 
