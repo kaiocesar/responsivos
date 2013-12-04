@@ -1,11 +1,16 @@
 <?php 
 error_reporting(E_ALL);
 
+
+
+set_include_path(ini_get("include_path"). "/opt/lampp/htdocs/responsivos/rp006/");
+
+var_dump(__DIR__); exit;
 /**
  * Include dos arquivos do luminu
  */
-require_once "../orm/Lumine.php";
-require_once "../orm/lumine-conf.php";
+require_once "orm/Lumine.php";
+require_once "orm/lumine-conf.php";
 
 /**
  * inicialização de configuração do lumine

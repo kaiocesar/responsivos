@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide with lightbox</title>
+
+	<!-- Biblioteca Jquery  -->
+	<script type="text/javascript"src="assets/js/jquery-1.10.1.min.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="assets/js/fancy/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/js/fancy/jquery.fancybox.css" media="screen" />
+
+
+
+	<!-- Cycle para o sliderTop -->	
+	
+	<script type="text/javascript" src="assets/js/jquery.cycle.js"></script>
+
+	<script type="text/javascript">
+		
+		$.fn.cycle.transitions.pinch = function($cont, $slides, opts){
+
+			$("#nextSliderTop").click(function(){
+				opts.fx = "scrollRight";
+			});
+
+			$("#prevSliderTop").click(function(){
+				opts.fx = "scrollLeft";
+			});
+
+			opts.fx = "scrollLeft";
+		};
+
+
+
+		$('#sliderTop').cycle({ 
+		    fx:     'pinch', 
+		    speed:  'fast', 
+		    delay: -4000,
+		    next:   '#nextSliderTop', 
+		    prev:   '#prevSliderTop' 
+		});
+
+		$(document).ready(function() {
+			$(".various").fancybox({
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: false,
+				width		: '70%',
+				height		: '70%',
+				autoSize	: false,
+				closeClick	: false,
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+		});
+	</script>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#wrapperSlider{width: 990px; min-height:440px; border: 1px solid #ddd; margin: 20px auto 0; display: block; position: relative; background: #F1F1F1;}
+		#sliderTop{width: 990px; height: 400px; border: 1px solid #333;}
+		.layerSliderTop{float: left;width: 100%;height: 100%;}
+		#btosSliderTop{float: left; width: 100%; height: 17px; position: absolute; bottom: 10px;}
+		#btosSliderTop a{color: #333; font-family: Arial, Verdana, Trebuchet MS; font-weight: bold;}
+		#nextSliderTop{float: left; margin: 0 0 0 20px;}
+		#prevSliderTop{float: right; margin: 0 20px 0 0px;}
+		.captionSliderTop{position: absolute; top: 20px; left: 20px; background: #FFF; padding:10px 20px;}
+	</style>
+</head>
+<body>
+
+	<div id="wrapperSlider">
+		<div id="sliderTop">
+			<div class="layerSliderTop">
+				<img src="assets/img/1.jpg" height="400" width="990" alt="">
+				<div class="captionSliderTop">1 - Lorem ipsum tal talt alLorem ipsum tal talt al 
+					<a class="various" data-fancybox-type="iframe" href="demo/iframe.html">Clique</a>  aqui para ver detalhes
+				</div>
+			</div>
+			<div class="layerSliderTop">
+				<img src="assets/img/2.jpg" height="400" width="990" alt="">
+				<div class="captionSliderTop">1 - Lorem ipsum tal talt alLorem ipsum tal talt al 
+					<a class="various" data-fancybox-type="iframe" href="demo/iframe.html">Clique</a>  aqui para ver detalhes
+				</div>
+			</div>
+			<div class="layerSliderTop">
+				<img src="assets/img/3.jpg" height="400" width="990" alt="">
+				<div class="captionSliderTop">1 - Lorem ipsum tal talt alLorem ipsum tal talt al 
+					<a class="various" data-fancybox-type="iframe" href="demo/iframe.html">Clique</a>  aqui para ver detalhes
+				</div>
+			</div>
+		</div>
+		<div id="btosSliderTop">
+			<a href="#" id="nextSliderTop">&lt;&lt; Next</a>
+			<a href="#" id="prevSliderTop">Prev &gt;&gt;</a>
+		</div>
+	</div>
+	
+</body>
+</html>
