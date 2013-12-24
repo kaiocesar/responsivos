@@ -7,8 +7,9 @@
  */
 
   include 'app/configs/config.php';
+  $log = $auth->CheckLog($_SERVER['REMOTE_ADDR']);
 
-  if ($auth->CheckLog($_SERVER['REMOTE_ADDR'])>0):
+  if ($log['count(*)']>0):
     header("Location: blacklist.php");
     exit();
   endif;

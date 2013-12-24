@@ -132,7 +132,7 @@ class Authentication{
 
 		$res = $this->CheckLog($ip);
 
-		if ($res>0):
+		if ($res['count(*)']>0):
 			header("Location: blacklist.php");
 		endif;
 		
