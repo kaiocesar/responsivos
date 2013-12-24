@@ -100,9 +100,9 @@ class Authentication{
 		$hashFINAL = $hash_arrU.''.$hashOrderKey;
 
 		if ($create_cookie==true):
-			setcookie("session", $hashFINAL);
-			setcookie("session_expiration", $rd);
-			setcookie("session_user", $username);
+			setcookie("session", $hashFINAL, time()+3600*24);
+			setcookie("session_expiration", $rd, time()+3600*24);
+			setcookie("session_user", $username, time()+3600*24);
 		else:
 			return $hashFINAL;
 		endif;
@@ -116,13 +116,55 @@ class Authentication{
 		unset($_COOKIE["session_expiration"]);
 		unset($_COOKIE["session_user"]);
 
-		setcookie("session");
-		setcookie("session_expiration");
-		setcookie("session_user");
+		setcookie("session","", 1);
+		setcookie("session_expiration","",1);
+		setcookie("session_user","",1);
 
 
 		header('Location: login.php');
 	}
+
+
+	public function logsAttempts(){
+		$ip = $_SERVER['REMOTE_ADDR'];
+
+		global $conn;
+
+		$res = $this->CheckLog($ip);
+
+		if ($res>0):
+			header("Location: blacklist.php");
+		endif;
+		
+		$getCookie =0;
+
+		if (isset($_COOKIE['session_init'])){
+			$getCookie = $_COOKIE['session_init'];
+		}
+
+		setcookie('session_init', (int)$getCookie + 1, time()+3600*24);
+
+
+		if ($_COOKIE['session_init']>=3):			
+			$sql = "INSERT INTO blacklist (ip, data_register, status) VALUES(:ip, :data_register, :status)";
+			$ss = $conn->prepare($sql);
+			$ss->bindValue(":ip", $ip);
+			$ss->bindValue(":data_register", date('Y-m-d h:i:s'));
+			$ss->bindValue(":status", '1');
+			$ss->execute();
+		endif;
+
+	}
+
+
+	public function CheckLog($ip=null) {
+		global $conn;
+		$black = $conn->prepare("SELECT count(*) FROM blacklist WHERE ip = '".$ip."' ");
+		$black->execute();
+		$res = $black->fetch(PDO::FETCH_ASSOC);
+		return $res;
+	}
+
 
 
 }

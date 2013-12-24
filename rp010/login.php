@@ -8,9 +8,18 @@
 
   include 'app/configs/config.php';
 
+  if ($auth->CheckLog($_SERVER['REMOTE_ADDR'])>0):
+    header("Location: blacklist.php");
+    exit();
+  endif;
+
+
   if ($_POST) :
     if ($auth->login($_POST)===true):
       header("Location: dash.php");
+    else:
+      $auth->logsAttempts();
+
     endif;
   endif;
 
