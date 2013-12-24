@@ -21,15 +21,19 @@
 		
 		$.fn.cycle.transitions.pinch = function($cont, $slides, opts){
 
+			// se clicar no botao NEXT
 			$("#nextSliderTop").click(function(){
 				opts.fx = "scrollRight";
 			});
 
+			// Se clicar no botao PREV
 			$("#prevSliderTop").click(function(){
 				opts.fx = "scrollLeft";
 			});
 
+			// transicao automatica
 			opts.fx = "scrollLeft";
+
 		};
 
 
